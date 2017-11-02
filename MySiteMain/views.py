@@ -1,6 +1,7 @@
 #coding: utf-8
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
+from datetime import datetime
 def index(request):
     return HttpResponse(u"欢迎来到me.cn的首页！")
 def cal(request):
@@ -14,3 +15,6 @@ def add2(req,a,b):
 def homepage(request):
     string="张三"
     return render(request, 'homepage.html',{'string':string})
+def currenttime(request):
+    now = datetime.now()
+    return render_to_response();
