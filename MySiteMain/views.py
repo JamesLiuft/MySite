@@ -2,8 +2,10 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from datetime import datetime
+from models import Blog
+
 def index(request):
-    return HttpResponse(u"欢迎来到me.cn的首页！")
+    return render(request,'index.html')
 def cal(request):
     a=request.GET['a']
     b=request.GET['b']
@@ -17,4 +19,7 @@ def homepage(request):
     return render(request, 'homepage.html',{'string':string})
 def currenttime(request):
     now = datetime.now()
-    return render_to_response();
+    return render_to_response(now);
+def getblogs(request):
+    contxt = {'blogs':Blog.objects.all().order_by('-created')}
+    return render(request,'blogs_list.html',contxt)

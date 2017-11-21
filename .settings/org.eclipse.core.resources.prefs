@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//MySite/settings.py=utf-8
+encoding//MySiteMain/migrations/0001_initial.py=utf-8
+encoding//MySiteMain/models.py=utf-8
 encoding//MySiteMain/views.py=utf-8
 encoding//PyBasicTest/basic.py=utf-8
